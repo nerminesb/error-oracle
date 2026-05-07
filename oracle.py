@@ -6,7 +6,7 @@ def get_local_context():
     """Reads all Python files in the current folder to give Gemini context."""
     context = ""
     for file in os.listdir('.'):
-        # We read other .py files, but NOT oracle.py itself
+        #  read other .py files, but NOT oracle.py itself
         if file.endswith('.py') and file != 'oracle.py':
             with open(file, 'r', encoding='utf-8') as f:
                 context += f"\n--- FILE: {file} ---\n{f.read()}"
@@ -14,7 +14,7 @@ def get_local_context():
 
 def run_oracle():
     # 1. Capture the error from the 'pipe' (|)
-    print("🔮 The Oracle is listening to the terminal...")
+    print(" The Oracle is listening to the terminal...")
     error_data = sys.stdin.read()
     
     if not error_data.strip():
